@@ -21,6 +21,9 @@ hadoop fs -mkdir /tmp/hdfsusecases
 ```
 hdfs dfs -find /tmp/hdfsusecases
 ```
-
+## Check what is the status code of the above command using, if it shows 0 then directory is created, if shows non zero then the directory is not created then check the step 3 again.
+```
+echo $?
+```
 
 
