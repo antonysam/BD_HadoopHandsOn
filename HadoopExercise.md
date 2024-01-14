@@ -25,5 +25,17 @@ hdfs dfs -find /tmp/hdfsusecases
 ```
 echo $?
 ```
-
+## Copy file generated only in step 1 (~/install/hdfsusecases/NYSE_2020_06_20.txt) from linux to hdfs directory /tmp/hdfsusecases in the name of NYSE_2020_06.txt
+```
+hadoop fs -put ~/install/hdfsusecases/NYSE_2020_06_20.txt /tmp/hdfsusecases/NYSE_2020_06.txt
+```
+## Like step 4 and 5, check whether the above file (/tmp/hdfsusecases/NYSE_2020_06.txt) is created or not in HDFS, using -f option and check for the status code
+## using $? and create a zero byte file in HDFS directory
+## /tmp/hdfsusecases in the name of _SUCCESS
+```
+hadoop fs -test -f /tmp/hdfsusecases/NYSE_2020_06.txt
+echo $?
+Note: If 0 then it is success else not created
+hadoop fs -touchz /tmp/hdfsusecases/_SUCCESS
+```
 
