@@ -48,3 +48,7 @@ hadoop fs -appendToFile ~/install/hdfsusecases/NYSE_2020_06_20.txt /tmp/hdfsusec
 ```
 hadoop fs -count /tmp/hdfsusecases/NYSE_2020_06.txt
 ```
+## 10. Count the number of rows are there in the /tmp/hdfsusecases/NYSE_2020_06.txt (Which should show the total count of the files created in step1 and 2)
+```
+hadoop fs -cat /tmp/hdfsusecases/NYSE_2020_06.txt | wc -l
+```
