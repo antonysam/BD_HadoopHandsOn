@@ -77,3 +77,7 @@ Note: We have to use the option called -getmerge to achieve this as given below.
 ```
 hadoop fs -Ddfs.blocksize=67108864 -put ~/install/hdfsusecases/NYSE_2020_06.txt /tmp/hdfsusecases/NYSE_2020_05.txt
 ```
+## 17. Set the blocksize 128MB (134217728) for the same file generated in step 16 and replace the existing file in HDFS.
+```
+hadoop fs -Ddfs.blocksize=134217728 -put ~/install/hdfsusecases/NYSE_2020_06.txt /tmp/hdfsusecases/NYSE_2020_04.txt
+```
