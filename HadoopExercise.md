@@ -52,3 +52,28 @@ hadoop fs -count /tmp/hdfsusecases/NYSE_2020_06.txt
 ```
 hadoop fs -cat /tmp/hdfsusecases/NYSE_2020_06.txt | wc -l
 ```
+## 11. Display only line 11 to 20 from the file in HDFS /tmp/hdfsusecases/NYSE_2020_06.txt
+```
+hadoop fs -cat /tmp/hdfsusecases/NYSE_2020_06.txt| sed -n 11,20p
+```
+## 12. Store line 11 to 20 from the file in HDFS /tmp/hdfsusecases/NYSE_2020_06.txt into linux file namely ~/install/hdfsusecases/NYSE_sampledata1.txt
+```
+hadoop fs -cat /tmp/hdfsusecases/NYSE_2020_06.txt| sed -n 11,20p > ~/install/hdfsusecases/NYSE_sampledata1.txt
+```
+## 13. Delete the line number 1 from the HDFS file /tmp/hdfsusecases/NYSE_2020_06.txt , for example if the above file contains 100 rows, after deletion it should have only 99 rows in HDFS
+Note: we can’t do this directly because of the WORM property of HDFS data, think about the possible work
+around and try to achive the result
+```
+```
+## 14. Copy the above file /tmp/hdfsusecases/NYSE_2020_06.txt in the name of /tmp/hdfsusecases/NYSE_2020_06_bkp.txt
+```
+hadoop fs -cp /tmp/hdfsusecases/NYSE_2020_06.txt /tmp/hdfsusecases/NYSE_2020_06_bkp.txt
+```
+## 15. Merge the files in HDFS /tmp/hdfsusecases/NYSE_2020_06.txt and /tmp/hdfsusecases/NYSE_2020_06_bkp.txt into Linux directory namely ~/install/hdfsusecases/NYSE_2020_06_merged.txt
+Note: We have to use the option called -getmerge to achieve this as given below.
+```
+```
+## 16. Set the blocksize 64MB while writing the file in HDFS, check in the UI how many blocks are generated
+```
+hadoop fs -Ddfs.blocksize=67108864 -put ~/install/hdfsusecases/NYSE_2020_06.txt /tmp/hdfsusecases/NYSE_2020_05.txt
+```
